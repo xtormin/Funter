@@ -1,0 +1,6 @@
+Flask==1.1.2
+beautifulsoup4==4.10.0
+SQLAlchemy==1.4.32
+bs4==0.0.1
+psycopg2-binary
+Flask-Caching==1.10.1

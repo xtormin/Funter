@@ -1,0 +1,64 @@
+{% extends 'template.html' %}
+{% block content %}
+<br>
+<h2><b>> Hunted Forms</b></h2><br>
+<div class="btn-csv">
+    <button type="button" class="button button3 btn-csv" onclick="download_csv_file()">Download CSV</button>
+</div>
+<div class="table-responsive"></div>
+    {% for url in all_urls_from_db %}
+        {% if url.form %}
+        <table class="table table-hover" style="max-width: 100%;" bordercolor="#b5b5b5">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="background-color: rgb(24, 24, 24); color:white">URL</th>
+                    <th style="background-color: rgb(24, 24, 24); color:white" colspan="5"> {{ url.url }} </th>
+                </tr>
+            </thead>
+            <thead class="thead-ligth">
+                <tr>
+                    <th style="background-color: rgb(168, 168, 168); color:rgb(24, 24, 24);" colspan="2">Forms</th>
+                    <th style="background-color: rgb(168, 168, 168); color:rgb(24, 24, 24);" colspan="3">Inputs</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                    <tr>
+                        <th style="background-color: rgb(216, 216, 216); color:rgb(24, 24, 24);">Action</th>
+                        <th style="background-color: rgb(216, 216, 216); color:rgb(24, 24, 24);">Method</th>
+                        <th style="background-color: rgb(216, 216, 216); color:rgb(24, 24, 24);">Type</th>
+                        <th style="background-color: rgb(216, 216, 216); color:rgb(24, 24, 24);">Name</th>
+                        <th style="background-color: rgb(216, 216, 216); color:rgb(24, 24, 24);">Value</th>
+                    </tr>
+                    {% for form in all_forms_from_db %}
+                    {% for input in all_inputs_from_db %}
+                        {% if form.id_url == url.id %}
+                            {% if input.id_form == form.id %}
+                            <tr>
+                                <td> {{ form.action }} </td>
+                                <td> {{ form.method }} </td>
+                                <td> {{ input.type }} </td>
+                                <td> {{ input.name }} </td>
+                                <td style="word-wrap: break-word;"> {{ input.value }} </td>
+                            </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+
+            </tbody>
+        </table>
+        {% endif %}
+    <br>
+    {% endfor %}
+ </div>
+<!--
+<script>
+    function download_csv_file(){
+        window.location.href = '/download/csv';
+        window.open('/download/csv');
+    }
+</script>
+-->
+
+{% endblock %}

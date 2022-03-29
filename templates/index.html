@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<br>
+<h2><b>> Home</b></h2><br>
+
+<div class="card">
+    <div class="card-body">
+        This tool hunts all forms and inputs found in a list of urls.
+    </div>
+</div>
+<br>
+<p>This repo: <a href="https://github.com/xtormin/formshunter">https://github.com/xtormin/formshunter</a></p>
+  
+<div class="section-box">
+    <h3>>> Sections</h3>
+    <ul>
+        <li><a href="/api/urls">URLs</a> - Displays all URLs that have been analyzed.</li>
+        <li><a href="/api/urls-forms-inputs">Forms</a> - Displays the form information for each URL.</li>
+    </ul>
+</div>
+
+{% endblock %}
