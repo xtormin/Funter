@@ -130,7 +130,6 @@ def get_forms_from_url(weblist):
 
     return output
 
-
 # MAIN FUNCTION
 
 def run():

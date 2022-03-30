@@ -15,7 +15,7 @@ class Project(Base):
     scope = relationship("Scope", cascade="all, delete", passive_deletes=True)
 
 class Scope(Base):
-    __tablename__ = 'scope'
+    __tablename__ = 'scopes'
     id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(String(200), unique=True)
     id_project = Column(Integer, ForeignKey('projects.id'), nullable=True)

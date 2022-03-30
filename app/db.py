@@ -21,7 +21,7 @@ logger.disabled = True
 
 def create_database(database_name):
     try:
-        e = create_engine("postgresql://postgres:secret@localhost:5432/")
+        e = create_engine("postgresql://postgres:secret@localhost:5434/")
         conn = e.connect()
         conn.execute("commit")
         conn.execute(f'CREATE DATABASE {database_name}')
@@ -35,7 +35,7 @@ try:
     DB_NAME = "formshunterdb"
     Base = declarative_base()
     create_database(DB_NAME)
-    engine = create_engine("postgresql://postgres:secret@localhost:5432/" + DB_NAME)
+    engine = create_engine("postgresql://postgres:secret@localhost:5434/" + DB_NAME)
     
     Session = sessionmaker(bind=engine)
 except Exception as e:
