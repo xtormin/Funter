@@ -54,6 +54,7 @@ To manage the obtained data you can access to the database with:
 
 DB connection:
 
+- Port: `5434`
 - Password: `secret`
 
 ![Beekeeper DB connection](/images/beekeeper_config.png)
