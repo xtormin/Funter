@@ -1,0 +1,16 @@
+url_name;action;method;input_name;type;value
+https://www.bing.com/;/search;None;q;search;None
+https://www.bing.com/;/search;None;search;submit;
+https://www.bing.com/;/search;None;form;hidden;QBLH
+https://crt.sh/;None;GET;q;text;None
+https://crt.sh/;None;GET;None;submit;Search
+https://www.google.com/;/search;None;ie;hidden;ISO-8859-1
+https://www.google.com/;/search;None;hl;hidden;es
+https://www.google.com/;/search;None;source;hidden;hp
+https://www.google.com/;/search;None;biw;hidden;None
+https://www.google.com/;/search;None;bih;hidden;None
+https://www.google.com/;/search;None;q;None;
+https://www.google.com/;/search;None;btnG;submit;Buscar con Google
+https://www.google.com/;/search;None;btnI;submit;Voy a tener suerte
+https://www.google.com/;/search;None;iflsig;hidden;AJiK0e8AAAAAYzCklW3eLVXT6KsHLQXwiZUpSE_NDPCz
+https://www.google.com/;/search;None;gbv;hidden;1

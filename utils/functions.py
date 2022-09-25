@@ -13,10 +13,13 @@ def write_csv(csv_filename, header, data):
         for d in data:
             writer.writerow(d)
 
-def read_file(filename):
+def read_from_file(filename):
     try:
-        with open(filename) as f: lines = f.read()
-        return lines
+        f = open(filename, 'r')
+        data = f.read()
+        data = data.split('\n')
+        f.close()
+        return list(filter(None, data))
     except Exception as e:
         logging.error(e)
         return None
@@ -30,7 +33,7 @@ def write_json_file(filename, content):
     try:
         with open(filename, "w") as outfile: json.dump(content, outfile)
     except Exception as e:
-        logging.erro(f"|-| Error writing output to {filename} file")
+        logging.error(f"|-| Error writing output to {filename} file")
         logging.error(e)
         pass
 

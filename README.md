@@ -2,62 +2,87 @@
 
 This tool hunts all forms and inputs found in a list of urls.
 
+## Virtual environment
+
+To create a python virtual environment:
+```
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install -r setup/requirements.txt
+```
+
 ## Install
 
-Create a postgresql docker container and install python requirements:
+Install requirements:
 ```
-bash setup/setup.sh
-bash setup/server.sh
+cd setup
+chmod +x setup.sh
+bash setup.sh
 ```
 
 ## Execution
 
-Execute the script with the list of urls as target and launch the web with the obtained data.
+First start the docker database server:
 ```
-python3 formshunter.py -U data/urls.txt -s
+cd setup
+bash server.sh
 ```
 
-![Forms displayed on the website](/images/webdata.png)
 
-### Options
+### Example 1 - Url
 
-Directory            | Description
----------------------|------------
--U                   | File with the list of urls
--o                   | Output file
--s                   | Launch a website to visualize obtained data
--r                   | Reset database to defaults
+```
+python3 formshunter.py -r -u https://www.google.com -o outputs/output.csv -v
+```
+
+- -r: Reset database
+- -U: Search forms on url.
+- -o: Dump 'form' document ("table") to CSV file.
+- -v: Verbose.
 
 
-Reset database data.
+![Command output](/images/formhunter_url_example.png)
+
+### Example 2 - File with list of urls
+
+```
+python3 formshunter.py -r -U data/urls.txt -o outputs/output.csv -v
+```
+
+- -r: Reset database
+- -U: Search forms on urls within urls.txt
+- -o: Dump 'form' document ("table") to CSV file.
+- -v: Verbose.
+
+![Command output](/images/formhunter_file_example.png)
+
+### Example 3 - Just reset database
+
 ```
 python3 formshunter.py -r
 ```
 
-Execute the script with the list of urls as target and launch the web with the obtained data and save the output to a CSV file.
-```
-python3 formshunter.py -U data/urls.txt -s
-```
+- -r: Reset database
 
-### Visualize in website
+## Tool options
 
-Launch the website:
-```
-bash launch-web.sh
-```
+Directory            | Description
+---------------------|------------
+-u                   | Url to scrape
+-u                   | List of urls to scrape (url.txt)
+-o                   | Dump form documents to CSV file
+-r                   | Reset database to defaults
+-v                   | Verbose
 
 ## Access to DB data
 
-To manage the obtained data you can access to the database with:
+To manage the obtained data you can access to the database, for example, with:
 
-[https://www.beekeeperstudio.io/](https://www.beekeeperstudio.io/)
+[https://dbgate.org/](https://dbgate.org/)
 
-DB connection:
+DB credentials in project `.env` file.
 
-- Port: `5434`
-- Password: `secret`
-
-![Beekeeper DB connection](/images/beekeeper_config.png)
+![Database data](/images/database_data.png)
 
 # Accounts
 
