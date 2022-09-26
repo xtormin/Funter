@@ -6,18 +6,19 @@ This tool hunts all forms and inputs found in a list of urls.
 
 To create a python virtual environment:
 ```
+sudo apt install python3-venv
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install -r setup/requirements.txt
 ```
 
-## Install
+## Setup
 
 Install requirements:
 ```
 cd setup
 chmod +x setup.sh
-bash setup.sh
+sudo bash setup.sh
 ```
 
 ## Execution
@@ -25,7 +26,7 @@ bash setup.sh
 First start the docker database server:
 ```
 cd setup
-bash server.sh
+sudo bash server.sh
 ```
 
 
@@ -69,7 +70,7 @@ python3 formshunter.py -r
 Directory            | Description
 ---------------------|------------
 -u                   | Url to scrape
--u                   | List of urls to scrape (url.txt)
+-U                   | List of urls to scrape (url.txt)
 -o                   | Dump form documents to CSV file
 -r                   | Reset database to defaults
 -v                   | Verbose
