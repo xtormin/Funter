@@ -7,3 +7,5 @@ flask-cors
 scrapy
 scrapy-splash
 pandas
+bs4
+requests_html
