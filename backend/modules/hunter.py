@@ -81,9 +81,6 @@ def run():
             urlslist_arg = ARGS.urlslist[0]
             urls = urls + read_from_file(urlslist_arg)
 
-        
-        
-
         if ARGS.resetdata:
             logger.info("|+| Database reseted")
             db_drop_all()
