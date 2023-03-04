@@ -85,9 +85,10 @@ DB credentials in project `.env` file.
 
 ![Database data](/images/database_data.png)
 
-# Accounts
+# Social
 
-* Linkedin: [https://www.linkedin.com/in/xtormin/](https://www.linkedin.com/in/xtormin/).
-* Twitter: [https://twitter.com/xtormin](https://twitter.com/xtormin).
-* Youtube: [https://www.youtube.com/channel/UCZs7q5QeyXS5YmUq6lexozw](https://www.youtube.com/channel/UCZs7q5QeyXS5YmUq6lexozw).
-* Instagram: [https://www.instagram.com/xtormin/](https://www.instagram.com/xtormin/).
+* **Website:** [https://xtormin.com](https://xtormin.com)
+* **Linkedin:** [https://www.linkedin.com/in/xtormin/](https://www.linkedin.com/in/xtormin/).
+* **Twitter:** [https://twitter.com/xtormin](https://twitter.com/xtormin).
+* **Youtube:** [https://www.youtube.com/channel/UCZs7q5QeyXS5YmUq6lexozw](https://www.youtube.com/channel/UCZs7q5QeyXS5YmUq6lexozw).
+* **Instagram:** [https://www.instagram.com/xtormin/](https://www.instagram.com/xtormin/).
