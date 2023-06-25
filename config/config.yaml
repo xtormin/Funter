@@ -1,0 +1,16 @@
+app:
+  name: "Funter"
+  version: "1.0.0"
+
+database:
+  connection:
+    host: 127.0.0.1
+    port: 27017
+    user: root
+    pass: SuperS3gur.!
+    dbname: funterdb
+
+splash:
+  connection:
+    address: 127.0.0.1
+    port: 8050

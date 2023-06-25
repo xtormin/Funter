@@ -2,17 +2,17 @@ version: '3'
 services:
   database:
     image: 'mongo:4.4'
-    container_name: 'formshunterdb'
+    container_name: 'funterdb'
     environment:
-      - MONGO_INITDB_DATABASE=${DATABASE_DB_NAME}
-      - MONGO_INITDB_ROOT_USERNAME=${DATABASE_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${DATABASE_PASSWORD}
+      - MONGO_INITDB_DATABASE=${DB_NAME}
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
     volumes:
-      - ~/database/formshunterdb:/data/db
+      - ~/database/funterdb:/data/db
     ports:
       - '27017-27019:27017-27019'
   splash:
     image: 'scrapinghub/splash'
-    container_name: 'formshunter_splash'
+    container_name: 'funter_splash'
     ports:
       - '8050:8050'
