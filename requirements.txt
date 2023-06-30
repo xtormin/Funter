@@ -9,3 +9,6 @@ scrapy-splash
 pandas
 bs4
 requests_html
+confuse
+termcolor
+coloredlogs
