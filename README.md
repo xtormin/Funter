@@ -2,13 +2,7 @@
 
 Funter tool extract all forms and inputs found in a list of urls.
 
-## ⭐ Features
-
-## 💥 Key Benefits
-
-
 # 💻 Install
-
 
 ## Virtual environment
 
@@ -75,8 +69,6 @@ To manage the obtained data you can access to the database, for example, with:
 
 DB credentials in project `.env` file.
 
-![Database data](/images/database_data.png)
-
 
 # 🛠️ Configuration
 
@@ -85,7 +77,7 @@ You can change the output formats and other settings through the [config.yaml](c
 
 # 💬 Change Log
 
-- **25/06/2023** - XNP v1.0.0
+- **25/06/2023** - Funter v1.0.0
   - New tool name "Funter".
   - New "config.yaml" file configuration.
   - Refactored code.
