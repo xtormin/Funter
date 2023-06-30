@@ -10,27 +10,16 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy_project.scrapy_project.items import *
 from backend.db.models import *
-from backend.db.db import db_drop_all, create_collection_ifnoexists_input, create_collection
-from backend.db.MongoAPI import *
-
-# DB CONNECTION
-try:
-    mongoengine = MongoAPI()
-    client = mongoengine.client
-    db = mongoengine.db
-    # conn = mongoengine.conn
-    connect(DATABASE_DB_NAME, host='mongodb://' + DATABASE_USERNAME + ':' + DATABASE_PASSWORD + '@' + DATABASE_ADDRESS + ':' + str(DATABASE_PORT) + '/?authSource=admin', alias='default')
-
-except Exception as e:
-    print('|-| [ERROR] Error connecting to database...')
-    print(e)
+from backend.db.MongoDBManager import *
 
 class LinkScraper(CrawlSpider):
     name = "linksscraper"
 
     def __init__(self, urls, **kwargs):
-        self.start_urls = urls
         super().__init__(**kwargs)
+        self.start_urls = urls
+        self.db_conn = MongoDBManager()
+        self.db_conn.connect()
 
     def start_requests(self):
         for url in self.start_urls:
@@ -69,7 +58,7 @@ class LinkScraper(CrawlSpider):
                 input_options = Selector(text=i).xpath('//@options').extract()
                 if input_options: form['options'] = input_options[0]
 
-                create_collection_ifnoexists_input(form)
+                self.db_conn.insert_data(form)
 
     def errback_httpbin(self, failure):
         # log all failures
