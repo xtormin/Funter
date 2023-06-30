@@ -7,13 +7,22 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+import confuse
+
+# LOAD CONFIG FROM YAML FILE
+config = confuse.Configuration('FUNTER', __name__)
+config.set_file('config/config.yaml')
+
+SPLASH_ADDRESS = config['splash']['connection']['address'].get()
+SPLASH_PORT = config['splash']['connection']['port'].get()
+
 BOT_NAME = 'scrapy_project'
 
 SPIDER_MODULES = ['scrapy_project.spiders']
 NEWSPIDER_MODULE = 'scrapy_project.spiders'
 
 # SPLASH CONFIGURATION
-SPLASH_URL = 'http://127.0.0.1:8050'
+SPLASH_URL = f'http://{SPLASH_ADDRESS}:{SPLASH_PORT}'
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
