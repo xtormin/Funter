@@ -1,5 +1,6 @@
 import confuse
 from backend.utils import cli, banner
+from backend.utils import update
 from scrapy_project.scrapy_project.spiders.linksscraper import LinkScraper
 from backend.utils.functions import *
 from requests_html import HTMLSession
@@ -41,6 +42,9 @@ except Exception as e:
 def run():
     try:
         banner.main()
+
+        # Update tool
+        update.update_program()
 
         output_filename = ARGS.outputfile
 
