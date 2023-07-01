@@ -1,6 +1,6 @@
 # ✨ Funter - Forms Hunter
 
-Funter tool extract all forms and inputs found in a list of urls.
+Funter (Forms Hunter) is a tool that hunts all forms and inputs found in a list of urls.
 
 # 💻 Install
 
